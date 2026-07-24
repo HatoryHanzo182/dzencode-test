@@ -1,0 +1,55 @@
+.orders {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 40px 60px;
+}
+
+.orders__header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.orders__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.orders__add {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    border: 3px solid #76a441;
+    background: #8ecd4b;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0,0,0,.2);
+}
+
+.orders__header h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #34404a;
+}
+
+.product-list__scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.product-list__scroll::-webkit-scrollbar-track {
+
+    border-radius: 10px;
+}
+
+.product-list__scroll::-webkit-scrollbar-thumb {
+    background: #c4cdd2;
+    border-radius: 10px;
+}
+
+.product-list__scroll::-webkit-scrollbar-thumb:hover {
+    background: #aeb9bf;
+}

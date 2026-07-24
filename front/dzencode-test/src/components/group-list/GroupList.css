@@ -1,0 +1,182 @@
+/* GroupList.css */
+.group-list {
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.group-list__header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.group-list__header h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #34404a;
+}
+
+.orders__add {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    border: 3px solid #76a441;
+    background: #8ecd4b;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0,0,0,.2);
+}
+
+.group-list__add {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    border: none;
+    background: #8ecd4b;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.group-list__items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.group-card {
+    height: 62px;
+    background: white;
+    border: 1px solid #dfe6ec;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    transition: 0.2s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.group-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.group-card--active {
+    border-color: #cdd5dc;
+}
+
+.group-card--active::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 100%;
+    background: #dce0e6;
+}
+
+.group-card__icon {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #d9e0e5;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.group-card__icon img {
+    width: 16px;
+    height: 16px;
+}
+
+.group-card__count {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 20px;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.group-card__count strong {
+    font-size: 22px;
+    color: #4a5965;
+    line-height: 18px;
+    font-weight: 500;
+}
+
+.group-card__count span {
+    font-size: 11px;
+    color: #9ca6ad;
+}
+
+.group-card__date {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.group-card__date--shift {
+    transform: translateX(-30px);
+}
+
+.group-card__date-small {
+    font-size: 10px;
+    color: #9fa8ae;
+}
+
+.group-card__date-big {
+    font-size: 13px;
+    color: #55626d;
+}
+
+.group-card__arrow {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.group-card__arrow--visible {
+    opacity: 1;
+    visibility: visible;
+    animation: arrowAppear 0.3s ease forwards;
+}
+
+@keyframes arrowAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%) translateX(10px) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0) scale(1);
+    }
+}
+
+.group-card__arrow img {
+    width: 12px;
+    height: 12px;
+}
