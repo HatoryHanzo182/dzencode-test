@@ -1,105 +1,104 @@
 # Dzencode Test Task
 
-## SPA-приложение: Orders & Products
+## SPA Application: Orders & Products
 
-Приложение состоит из двух частей:
+The application consists of two parts:
 
-* **Backend** — REST API на Node.js и Express.js.
-* **Frontend** — одностраничное приложение на React + Vite.
-* **Database** — MongoDB для хранения данных.
-* **WebSocket** — Socket.IO для отображения количества пользователей, находящихся онлайн.
-* **Docker** — приложение может быть запущено в контейнерах
+* **Backend** — REST API in Node.js and Express.js.
+* **Frontend** — Single-page application in React + Vite.
+* **Database** — MongoDB for data storage.
+* **WebSocket** — Socket.IO for displaying the number of online users.
+* **Docker** — the application can be run in containers
 * **Host** — http://34.53.176.159/orders
 
 ---
 
-### 1. Установка и запуск Backend
+### 1. Installing and Running the Backend
 
-Перейдите в директорию Backend:
+Change to the Backend directory:
 
 ```bash
 cd back
 ```
 
-Установите зависимости:
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-Для запуска Backend в режиме разработки:
+To run the Backend in development mode:
 
 ```bash
 npm run dev
 ```
 
-После запуска сервер будет доступен по адресу:
+After launching, the server will be accessible at:
 
 ```text
 http://localhost:5000
 ```
 
-### 2. Установка и запуск Frontend
+### 2. Installing and Running the Frontend
 
-Откройте новое окно терминала и перейдите в директорию Frontend:
+Open a new terminal window and change to the Frontend directory:
 
 ```bash
 cd front/dzencode-test
 ```
 
-Установите зависимости:
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-Для запуска Frontend в режиме разработки:
+To run the Frontend in In development mode:
 
 ```bash
 npm run dev
 ```
 
-После запуска приложение будет доступно по адресу:
+After launch, the application will be available at:
 
 ```text
 http://localhost:5173
 ```
 
-### 3. Запуск Playwright тестов
+### 3. Running Playwright Tests
 
-Для запуска автоматизированных E2E-тестов используется Playwright.
+Playwright is used to run automated E2E tests.
 
-Перейдите в директорию с тестами:
+Go to the test directory:
 
 ```bash
 cd front/dzencode-test
 ```
 
-Если браузеры Playwright ещё не установлены, выполните
+If Playwright browsers are not yet installed, run
 
 ```bash
 npx playwright install
 ```
 
-Для запуска тестов в интерактивном
+To run tests interactively
 
 ```bash
 npx playwright test --ui
 ```
 
-Запустите тесты
+Run the tests
 
 ![Groups](./screenshots/p-t.png)
 
+## Implemented
 
-## Реализовано
+As part of the test task, the **Orders & Products** SPA application was developed for managing receipts, products, and their groups. The app allows you to view a list of receipts, the number of associated items, product groups, and detailed information about each item, including serial number, type, specifications, photo, warranty period, and price in various currencies. Navigation between app sections is implemented, and the interface is localized into Russian and English.
 
-В рамках тестового задания разработано SPA-приложение **Orders & Products** для управления приходами, товарами и их группами. Приложение позволяет просматривать список приходов, количество связанных с ними товаров, группы товаров и подробную информацию о каждом товаре, включая серийный номер, тип, спецификацию, фотографию, гарантийный период и стоимость в различных валютах. Реализована навигация между разделами приложения, а также локализация интерфейса на русский и английский языки.
+The app's backend is built on Node.js and Express.js using MongoDB and Mongoose. The architecture is divided into controllers, services, routes, and data models. Authorization is implemented using JWT, middleware for authorization checking, handling uploaded images, and a REST API for interacting with receipts and items.
 
-Backend приложения реализован на **Node.js и Express.js** с использованием **MongoDB и Mongoose**. Архитектура разделена на контроллеры, сервисы, маршруты и модели данных. Реализована авторизация с использованием **JWT**, middleware для проверки авторизации, работа с загружаемыми изображениями и REST API для взаимодействия с приходами и товарами.
+Socket.IO is used to display the number of users online in the app. The number of active sessions is automatically updated when users connect and disconnect.
 
-Для отображения количества пользователей, находящихся в приложении онлайн, реализована работа через **Socket.IO**. Количество активных сессий автоматически обновляется при подключении и отключении пользователей.
+The frontend is developed using React and Vite. React Router is used for navigation, state management is implemented with Redux, and interaction with the backend is handled via the REST API and Socket.IO. The interface is adapted to the main scenarios of working with receipts, products, and groups.
 
-Frontend разработан с использованием **React и Vite**. Для навигации используется React Router, управление состоянием реализовано с помощью Redux, а взаимодействие с Backend осуществляется через REST API и Socket.IO. Интерфейс адаптирован под основные сценарии работы с приходами, товарами и группами.
-
-Для проверки основных пользовательских сценариев добавлены автоматизированные **E2E-тесты на Playwright** с возможностью запуска и отладки через Playwright UI Mode.
+To test key user scenarios, automated E2E tests using Playwright have been added, with the ability to run and debug them using Playwright UI Mode.
