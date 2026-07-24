@@ -6,7 +6,12 @@ export function InitializeSocket(httpServer)
     {
         cors: 
         {
-            origin: ['http://localhost:5173', 'http://34.53.176.159'],
+            origin: 
+            [
+                'http://localhost:3000',
+                'http://localhost:5173',
+                'http://34.53.176.159',
+            ],
             methods: ['GET', 'POST'],
         },
     });
@@ -18,7 +23,7 @@ function HandleConnection(socket)
 {
     BroadcastActiveSessions(socket.server);
 
-    socket.on('disconnect', (reason) => 
+    socket.on('disconnect', () => 
     {
         BroadcastActiveSessions(socket.server);
     });
