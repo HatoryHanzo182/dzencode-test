@@ -6,7 +6,7 @@ export function InitializeSocket(httpServer)
     {
         cors: 
         {
-            origin: 'http://localhost:5173',
+            origin: ['http://localhost:5173', 'http://34.53.176.159'],
             methods: ['GET', 'POST'],
         },
     });
