@@ -1,5 +1,12 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, type Dispatch, type SetStateAction, type MutableRefObject } from 'react';
 import { socket } from '@/socket/socket';
+
+interface TimeData
+{
+    day: string;
+    date: string;
+    time: string;
+}
 
 export function BuildDateAndTime() 
 {
@@ -33,7 +40,7 @@ export function ActiveSessions()
     return sessions;
 }
 
-function UpdateTime(setTimeData, animationFrameRef) 
+function UpdateTime(setTimeData: Dispatch<SetStateAction<TimeData>>, animationFrameRef: MutableRefObject<number | null>) 
 {
     const now = new Date();
     const locale = navigator.language || 'ru-RU';    
